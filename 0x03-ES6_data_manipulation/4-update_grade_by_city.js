@@ -1,4 +1,4 @@
-import getListStudents from './0-get_list_students.js';
+import getListStudents from './0-get_list_students';
 
 function updateStudentGradeByCity(students, city, newGrades) {
   return students

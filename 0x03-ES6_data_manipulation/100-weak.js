@@ -1,7 +1,5 @@
 const weakMap = new WeakMap();
 
-export { weakMap, queryAPI };
-
 function queryAPI(endpoint) {
   // Initialize count if not already present
   if (!weakMap.has(endpoint)) {
@@ -20,3 +18,5 @@ function queryAPI(endpoint) {
   // Return the count for this endpoint
   return count;
 }
+
+export { weakMap, queryAPI };
