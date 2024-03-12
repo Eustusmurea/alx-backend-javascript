@@ -1,11 +1,4 @@
-export default function hasArrayValues(set, array) {
-  const result = [];
-  array.forEach((value) => {
-    if (set.has(value)) {
-      result.push(true);
-    } else {
-      result.push(false);
-    }
-  });
-  return result;
+export default function hasValuesFromArray(set, array) {
+    // Check if all elements in the array exist in the set
+    return array.every(element => set.has(element));
 }
