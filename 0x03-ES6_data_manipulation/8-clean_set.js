@@ -1,6 +1,5 @@
-export default function cleanSet(set, array)
-{
-    if (
+export default function cleanSet(set, startString) {
+  if (
     !set && !startString && !(set instanceof Set) && typeof startString !== 'string'
   ) {
     return '';

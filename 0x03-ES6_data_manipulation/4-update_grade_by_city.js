@@ -1,6 +1,9 @@
-export default function updateStudentGradeByCity(students, city, newGrades)
-{
-    const filterStudents = students.filter(
+export default function updateStudentGradeByCity(
+  students,
+  city,
+  newGrades,
+) {
+  const filterStudents = students.filter(
     (student) => student.location === city,
   );
 
