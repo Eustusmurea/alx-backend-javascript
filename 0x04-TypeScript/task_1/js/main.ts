@@ -1,47 +1,63 @@
-export interface Teacher {
-  readonly firstName: string,
-  readonly lastName: string,
-  fullTimeEmployee: boolean,
-  yearsOfExperience?: number,
-  location: string,
-  [index:string]: any,
+interface Teacher {
+  readonly firstName: string;
+  readonly lastName: string;
+  fullTimeEmployee: boolean;
+  yearsOfExperience?: number;
+  location: string;
+  [property: string]: any;
 }
 
-export interface Director extends Teacher {
-  numberOfReport: number,
+const teacher3: Teacher = {
+  firstName: 'John',
+  fullTimeEmployee: false,
+  lastName: 'Doe',
+  location: 'London',
+  contract: false,
+};
+
+console.log(teacher3);
+
+interface Directors extends Teacher {
+  numberOfReports: number;
 }
 
-export interface printTeacherFunction {
-  (firstName: string, lastName: string): string;
+  const director1: Directors = {
+  firstName: 'John',
+  lastName: 'Doe',
+  location: 'London',
+  fullTimeEmployee: true,
+  numberOfReports: 17,
+};
+
+function printTeacher(firstName: string, lastName: string): string {
+  return `${firstName[0]}, ${lastName}`;
 }
 
-export function printTeacher(firstName: string, lastName: string): string {
-  return `${firstName[0]}. ${lastName}`;
-}
+printTeacher('John', 'Doe');
 
-export interface IStudentClassConstructor {
-  new (firstName: string, lastName: string): IStudentClass;
-}
-
-export interface IStudentClass {
+interface Class {
   workOnHomework(): string;
   displayName(): string;
 }
 
-export class StudentClass implements IStudentClass {
-  private _firstName!: string;
-  private _lastName!: string;
+interface Constructor { 
+  firstName: string;
+  lastName: string; 
+}
 
-  constructor(firstName: string, lastName: string) {
-    this._firstName = firstName;
-    this._lastName = lastName;
+class StudentClass implements Class {
+  firstName: string;
+  lastName: string;
+  
+  constructor(args: Constructor) {
+    this.firstName = args.firstName;
+    this.lastName = args.lastName;
   }
-
-  workOnHomework() {
+  workOnHomework(): string {
     return 'Currently working';
   }
 
-  displayName() {
-    return this._firstName;
+  displayName(): string {
+    return this.firstName;
   }
 }
