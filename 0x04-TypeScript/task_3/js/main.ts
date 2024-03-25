@@ -5,7 +5,7 @@ import * as CRUD from './crud';
 
 const row: RowElement = {
   firstName: 'Guillaume',
-  lastName: 'Salva',
+  lastName: 'Silva',
 };
 
 const newRowID: RowID = CRUD.insertRow(row);
