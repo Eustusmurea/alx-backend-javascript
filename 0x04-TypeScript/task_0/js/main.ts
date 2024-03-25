@@ -20,3 +20,4 @@ const stu2: Student = {
 };
 
 const StudentsList: Student[] = [stu1, stu2];
+console.log(StudentsList);
